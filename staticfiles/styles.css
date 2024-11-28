@@ -1,0 +1,398 @@
+body {
+    font-family: 'Roboto';
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaf7ea;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.welcome strong {
+    color: #4CAF50;
+}
+
+.logout-form button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-form button:hover {
+    background-color: #d32f2f;
+}
+
+.add-post h2 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.add-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-post input,
+.add-post textarea,
+.add-post button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.add-post button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-post button:hover {
+    background-color: #45A049;
+}
+
+.add-post button:focus {
+    outline: none;
+}
+
+.posts h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.post-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.post-item {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+button,
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+form button:hover {
+    background-color: #45A049;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f;
+}
+
+.post-item .action-buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.edit-form {
+    display: none;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-form .timestamp,
+.edit-form .author-info {
+    display: none;
+}
+
+.edit-form button {
+    margin-top: 10px;
+}
+
+.edit-form button[type="button"] {
+    margin-left: 10px;
+}
+
+.add-post button {
+    width: auto;
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-post button:hover {
+    background-color: #45A049;
+}
+
+.add-post button:focus {
+    outline: none;
+}
+
+.add-post textarea,
+.edit-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+.post-content {
+    font-size: 1rem;
+    margin: 10px 0;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    max-height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-panel {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-panel h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group-log {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group-log input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button,
+form button,
+a.btn-log {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    width: auto;
+}
+
+button:hover,
+form button:hover,
+a.btn-log:hover {
+    background-color: #0056b3;
+}
+
+button:focus,
+form button:focus,
+a.btn-log:focus {
+    outline: none;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f;
+}
+
+.post-item .action-buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-log {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-log:hover {
+    background-color: #0056b3;
+}
+
+.btn-cancel {
+    color: #333;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.btn-cancel:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.auth-link {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.guest-message {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.guest-message .link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.guest-message .link:hover {
+    text-decoration: underline;
+    color: #45A049;
+}
+
+@media (max-width: 768px) {
+    .welcome,
+    .guest-message {
+        width: 90%;
+    }
+
+    .add-post-form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .form-control {
+        width: 95%;
+    }
+
+    .add-post textarea,
+    .add-post input {
+        width: 90%;
+    }
+}
