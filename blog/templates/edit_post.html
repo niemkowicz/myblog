@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Edit Post</h1>
+        </header>
+
+        {% if user.is_authenticated %}
+            <div class="welcome">
+                <p>Welcome, <strong>{{ user.username }}</strong>!</p>
+                <form action="{% url 'logout' %}" method="post" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+            </div>
+        {% endif %}
+
+        <section class="edit-post">
+            <h2>Edit Post: {{ post.title }}</h2>
+            <form method="post" class="add-post">
+                {% csrf_token %}
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" class="form-control" value="{{ form.title.value }}" required>
+                </div>
+                <div>
+                    <label for="content">Content:</label>
+                    <textarea name="content" id="content" class="form-control" required maxlength="250">{{ form.content.value }}</textarea>
+                </div>
+                <input type="hidden" name="action" value="edit_post">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </section>
+
+        {% if user.is_authenticated and post.author == user %}
+            <div class="action-buttons">
+                 <a href="{% url 'home' %}" class="btn-cancel">Cancel</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
